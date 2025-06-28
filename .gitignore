@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+
+# PyCharm project files
+.idea/
+
+# VSCode project files
+.vscode/
+
+# Git folder (don't ignore it, just a reminder)
+!.git/
+
+# Jupyter Notebook checkpoints (if any)
+.ipynb_checkpoints/
+
+# MacOS files
+.DS_Store
+
+# Windows thumbnail cache
+Thumbs.db
+
+# Log files
+*.log
+
+# Ignore built folders (optional)
+build/
+dist/
+
+# Ignore simulation output folders (optional)
+output/
+Penrose_Simulation/
