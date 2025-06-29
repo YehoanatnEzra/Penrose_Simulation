@@ -8,7 +8,6 @@ import matplotlib
 
 matplotlib.use('TkAgg')
 
-# You can adjust this limit. The reset will happen when the number of tiles exceeds this.
 MAX_TILES = 100000
 
 rhombi = [create_initial_rhombus(is_fat=True, size=1.0)]
@@ -50,7 +49,7 @@ draw_math_explanation(ax_text)
 def update(frame):
     global rhombi
 
-    # --- Step 1: Generate the next state (Deflation) ---
+    # Step 1: Generate the next state (Deflation) 
     # (Skip on frame 0 to show the initial tile first)
     if frame > 0:
         new_rhombi = []
@@ -62,10 +61,10 @@ def update(frame):
     draw_rhombi(rhombi, ax_anim)
     ax_anim.set_title(f"Generation: {frame} | Tiles: {len(rhombi)}")
 
-    # --- Step 3: Check the state and RESET for the next frame if over the limit ---
+    # Check the state and RESET for the next frame if over the limit 
     if len(rhombi) > MAX_TILES:
         print(f"\n--- Reached Limit ({len(rhombi)} > {MAX_TILES}). Resetting simulation. ---\n")
-        # This resets the data that the *next* call to update() will see
+
         rhombi = [create_initial_rhombus(is_fat=True, size=1.0)]
 
 
