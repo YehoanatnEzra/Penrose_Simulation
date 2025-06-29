@@ -37,7 +37,7 @@ def create_initial_rhombus(center=(0, 0), size=1.0, is_fat=True, angle=0):
         # The smaller interior angle of a thin rhombus is 36 degrees
         interior_angle = 36 * np.pi / 180
 
-    # 1. Create a perfect rhombus at the origin based on side length (size)
+    # Create a perfect rhombus at the origin based on side length (size)
     #    and interior angle.
     A = np.array([0.0, 0.0])
     B = np.array([size, 0.0])
@@ -45,11 +45,11 @@ def create_initial_rhombus(center=(0, 0), size=1.0, is_fat=True, angle=0):
     C = B + D
     vertices = [A, B, C, D]
 
-    # 2. Find the center of this rhombus and shift it to the origin
+    #  Find the center of this rhombus and shift it to the origin
     current_center = sum(vertices) / 4.0
     centered_vertices = [v - current_center for v in vertices]
 
-    # 3. Rotate the centered rhombus and move it to the final center position
+    #  Rotate the centered rhombus and move it to the final center position
     rot_matrix = np.array([[np.cos(angle), -np.sin(angle)],
                            [np.sin(angle), np.cos(angle)]])
     final_vertices = [np.dot(v, rot_matrix.T) + np.array(center) for v in centered_vertices]
