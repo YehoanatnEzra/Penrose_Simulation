@@ -48,20 +48,15 @@ draw_math_explanation(ax_text)
 
 def update(frame):
     global rhombi
-
-    # Step 1: Generate the next state (Deflation) 
-    # (Skip on frame 0 to show the initial tile first)
     if frame > 0:
         new_rhombi = []
         for rh in rhombi:
             new_rhombi.extend(rh.deflate())
         rhombi = new_rhombi
 
-    # --- Step 2: Draw the current state ---
     draw_rhombi(rhombi, ax_anim)
     ax_anim.set_title(f"Generation: {frame} | Tiles: {len(rhombi)}")
 
-    # Check the state and RESET for the next frame if over the limit 
     if len(rhombi) > MAX_TILES:
         print(f"\n--- Reached Limit ({len(rhombi)} > {MAX_TILES}). Resetting simulation. ---\n")
 
