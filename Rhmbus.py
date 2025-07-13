@@ -27,7 +27,7 @@ class Rhombus:
             new_rhombi.append(Rhombus([D, R, C, A], is_fat=True))
         return new_rhombi
 
-# --- CORRECTED HELPER FUNCTION ---
+# ---  HELPER FUNCTION ---
 def create_initial_rhombus(center=(0, 0), size=1.0, is_fat=True, angle=0):
     """Creates a mathematically perfect rhombus."""
     if is_fat:
